@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>honzq.vintage - Vintage Clothing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="brand-section">
+                    <h1 class="brand-name">honzq.vintage</h1>
+                    <p class="tagline">Curated vintage pieces for the modern wardrobe</p>
+                </div>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <button class="about-btn" id="aboutBtn">About</button>
+                    <button class="lang-btn" id="langBtn">
+                        <span id="langText">CZ</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="tops">Tops</button>
+            <button class="filter-btn" data-filter="bottoms">Bottoms</button>
+            <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+        </section>
+
+        <section class="products-grid" id="productsGrid">
+            <!-- Products will be dynamically loaded here -->
+        </section>
+    </main>
+
+    <section class="about-section" id="aboutSection">
+        <div class="container">
+            <h2 class="about-title">About Us</h2>
+            <div class="about-content">
+                <p class="about-text" id="aboutText">
+                    Welcome to honzq.vintage - your destination for unique, hand-picked vintage streetwear.
+                    We specialize in curating rare and authentic pieces from iconic brands like Supreme, Bape,
+                    and other premium labels. Each item is carefully selected to bring you the best quality
+                    vintage fashion at affordable prices. Based in Czech Republic, we're passionate about
+                    sustainable fashion and giving timeless pieces a second life.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="contact-title">Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+420792312863" class="contact-link">+420 792 312 863</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:honza.jerabek11@gmail.com" class="contact-link">honza.jerabek11@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Instagram</span>
+                    <a href="https://instagram.com/h0nzq_119" target="_blank" class="contact-link">@h0nzq_119</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 honzq.vintage. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <div class="main-image-container">
+                        <img id="modalMainImage" src="" alt="Product Image">
+                    </div>
+                    <div class="thumbnail-container" id="thumbnailContainer">
+                        <!-- Thumbnails will be dynamically added here -->
+                    </div>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalProductName" class="modal-product-name"></h2>
+                    <p id="modalProductCategory" class="modal-product-category"></p>
+                    <p id="modalProductPrice" class="modal-product-price"></p>
+                    <div id="modalProductStatus" class="modal-product-status"></div>
+                    <button id="addToCartBtn" class="add-to-cart-btn">Add to Cart</button>
+                    <div class="modal-description">
+                        <h3>Description</h3>
+                        <p id="modalProductDescription"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="cartModalClose">&times;</span>
+            <div class="cart-container">
+                <h2 class="cart-title">Your Cart</h2>
+                <div id="cartItems" class="cart-items">
+                    <!-- Cart items will be dynamically loaded here -->
+                </div>
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span id="cartTotal" class="cart-total-price">0 Kč</span>
+                    </div>
+                    <button id="checkoutBtn" class="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="products.js" defer></script>
+    <script src="language.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="cart.js" defer></script>
+</body>
+</html>
